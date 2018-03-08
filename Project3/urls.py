@@ -16,14 +16,18 @@ Including another URLconf
 # import loginform
 from django.conf.urls import url
 from django.contrib import admin
+from django.contrib.auth.views import login
 from django.http import request
 
 import loginapp
-from loginapp.views import loginreq, loginform
+from loginapp.views import loginreq, loginform, auth, login_reqq
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^loginreq/$', loginreq),
-    url(r'^loginform/$', loginform)
+    url(r'^loginform/$', loginform),
+    url(r'^login_reqq/$',login_reqq),
+    url(r'^auth/$',auth)
+
 
 ]
